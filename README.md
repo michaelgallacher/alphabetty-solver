@@ -2,6 +2,9 @@
 
 The app uses the most recent image (or a manually imported image) and finds all the words available, assuming the image is a screenshot of an AlphaBetty game.  Once the list of words is created, the user can either tap on a letter to see the words that use it or tap on a word and see where that word is on the board.
 
+![Sample1][Test/sample1.png] 
+![Sample2][Test/sample2.png]
+
 This project started as a small python script which I wrote to expand my OpenCV skills.  It uses OpenCV to find, recognize, and identify the letters on the board.
 
 ## Running the app
