@@ -168,15 +168,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func __updateBoard(_ lettersAndRectsString:String) {
         self.letter_rects = []
-        if (lettersAndRectsString.count == 0) {
-            let alert = UIAlertController(title: "Not a recognized board", message: lettersAndRectsString, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+        if (!lettersAndRectsString.contains(";") ||
+            lettersAndRectsString.components(separatedBy: ";")[0].replacingOccurrences(of: "_", with: "").count == 0) {
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Not a recognized board", message: "Try a different image", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
             self.original_word_list = []
         } else if (lettersAndRectsString[lettersAndRectsString.startIndex] == "!") {
-            let alert = UIAlertController(title: "Exception?", message: lettersAndRectsString, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Exception?", message: lettersAndRectsString, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
             self.original_word_list = []
         } else {
             let rawComponents = lettersAndRectsString.components(separatedBy: ";")
@@ -215,11 +220,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         if let pickedImage = info[UIImagePickerController.InfoKey.imageURL] as? NSURL {
-            loadImage(imageUrl: pickedImage)
+            picker.dismiss(animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.loadImage(imageUrl: pickedImage)
+            }
         }
-        picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onImportImage(_ sender: UIButton) {
