@@ -50,7 +50,7 @@ thresh_counter = co.Counter()
 crop_counter = co.Counter()
 
 parser = argparse.ArgumentParser(description='Code for Finding contours in your image tutorial.')
-parser.add_argument('-i', '--input', help='Path to input image.', default='/users/michael/code/github/wordscan/test/IMG_1919.PNG')
+parser.add_argument('-i', '--input', help='Path to input image.')
 parser.add_argument('-d', '--debug', help='Set logging level.', default='0')
 parser.add_argument('-f', '--fbm', help='tile # to stop and show detail.', default='-1')
 parser.add_argument('-q', '--quiet', help='quiet mode', default='false')
@@ -127,7 +127,7 @@ def create_ab_font_baseline():
     # alphabet_common_letter = 'ETAOINSRHLDCUMFPGWYBVKXJQZ'
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    fontpath = "../wordscan/resources_ab/{0}.png"
+    fontpath = "../Source/resources_ab/{0}.png"
 
     contours_map = []
     for i, letter in enumerate(alphabet):
