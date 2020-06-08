@@ -1,3 +1,8 @@
+# Mine
+opencv2.framework
+.idea
+.iml
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
