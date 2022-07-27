@@ -76,6 +76,64 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         )
     }
     
+    
+    var textField: UITextField  {
+        let txt =  UITextField(frame: CGRect(x:0 , y:0, width:200, height: 60))
+        txt.textColor = .white
+        txt.backgroundColor = .black
+        txt.placeholder = "new letter"
+        txt.textAlignment = .left
+        let ctr = self.view.center
+        print(ctr.x)
+        txt.center = ctr
+        txt.translatesAutoresizingMaskIntoConstraints = true
+        return txt
+    }
+    
+    @objc
+    func cancelAction() {
+        self.textField.resignFirstResponder()
+    }
+    
+    @objc
+    func doneAction() {
+        self.textField.resignFirstResponder()
+    }
+    
+    @IBAction func onImageLongPressed(_ sender: Any) {
+        guard let sender = sender as? UILongPressGestureRecognizer else { return }
+        print(sender.state.rawValue)
+        if sender.state == .began {
+            self.view.addSubview(self.textField)
+        }
+    }
+    
+    @IBAction func onImageLongPressed2(_ sender: Any) {
+        guard let sender = sender as? UITapGestureRecognizer else { return }
+        guard let board = self.currentBoard else { return }
+        
+        // The image is presented as 'aspect fill' so calculate
+        // where on the image the tap occured
+        let pt = sender.location(in: imageView)
+        let apt = aspectFillPoint(for: pt, in: imageView)
+        
+        var idx = 0
+        for rect in letter_rects {
+            if rect.contains(apt) {
+                break
+            }
+            idx += 1
+        }
+        
+        // If the index is valid, find all words that use the tile at that index.
+        // Otherwise, clear the board.
+        if idx < board.tiles.count {
+            let selectedTile = board.tiles[idx];
+            self.wordListTableView.reloadData()
+        }
+    }
+    
+    
     //
     // Determine which, if any, tile was tapped on and then display all words
     // which contain the letter in the tile.
@@ -229,6 +287,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func onImportImage(_ sender: UIButton) {
+        loadLastImage()
+    }
+    @IBAction func onImportImage2(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,9 @@
 		4CB30F4522CC04AA00F87EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB30F4322CC04AA00F87EB2 /* Main.storyboard */; };
 		4CB30F4722CC04AB00F87EB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB30F4622CC04AB00F87EB2 /* Assets.xcassets */; };
 		4CB30F4A22CC04AB00F87EB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB30F4822CC04AB00F87EB2 /* LaunchScreen.storyboard */; };
-		4CB955B3248EC7E800CE2136 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB203E222EF9C4000DB4FA3 /* opencv2.framework */; };
 		4CC4AEF422F34AE100D862DD /* resources_ab in Resources */ = {isa = PBXBuildFile; fileRef = 4CB203F522F132FE00DB4FA3 /* resources_ab */; };
 		4CCF6A4E22F3456E00A46A98 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4CB203E722EFE40200DB4FA3 /* OpenCVWrapper.mm */; };
+		4CFC2E45258ABD3C00BF9C1F /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CFC2E44258ABD3C00BF9C1F /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,7 +39,6 @@
 		4C17314E230A1C2C005BCA29 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		4C173150230A1C4E005BCA29 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		4C31B42F22D8087000016C59 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
-		4CB203E222EF9C4000DB4FA3 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		4CB203E522EFE40200DB4FA3 /* AlphabettySolver-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AlphabettySolver-Bridging-Header.h"; sourceTree = "<group>"; };
 		4CB203E622EFE40200DB4FA3 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		4CB203E722EFE40200DB4FA3 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		4CB30F4622CC04AB00F87EB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB30F4922CC04AB00F87EB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CB30F4B22CC04AB00F87EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CFC2E44258ABD3C00BF9C1F /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CB955B3248EC7E800CE2136 /* opencv2.framework in Frameworks */,
+				4CFC2E45258ABD3C00BF9C1F /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +70,9 @@
 		4CB203E122EF9C4000DB4FA3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC2E44258ABD3C00BF9C1F /* opencv2.framework */,
 				4CB203EB22EFE45F00DB4FA3 /* UIKit.framework */,
 				4CB203E922EFE45800DB4FA3 /* Foundation.framework */,
-				4CB203E222EF9C4000DB4FA3 /* opencv2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 		4CB30F3422CC04AA00F87EB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Michael Gallacher";
 				TargetAttributes = {
@@ -152,7 +152,7 @@
 				};
 			};
 			buildConfigurationList = 4CB30F3722CC04AA00F87EB2 /* Build configuration list for PBXProject "alphabetty-solver" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -271,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -329,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +401,7 @@
 				4CB30F4D22CC04AB00F87EB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4CB30F4E22CC04AB00F87EB2 /* Build configuration list for PBXNativeTarget "alphabetty-solver" */ = {
 			isa = XCConfigurationList;
@@ -410,7 +410,7 @@
 				4CB30F5022CC04AB00F87EB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
