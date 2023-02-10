@@ -1,5 +1,7 @@
 # alphabetty-solver
 
+I created this app as a solver for the popular AlphaBetty Saga app distributed by King. In December 2021, King abandonded the app and it is no longer available for download. I have now added the code to my public portfolio.
+
 The app uses the most recent image (or a manually imported image) and finds all the words available, assuming the image is a screenshot of an AlphaBetty game.  Once the list of words is created, the user can either tap on a letter to see the words that use it or tap on a word and see where that word is on the board.
 
 ![Sample1](Test/sample1.png) ![Sample2](Test/sample2.png)
@@ -8,7 +10,7 @@ This project started as a small python script which I wrote to expand my OpenCV 
 
 ## Running the app
 - You'll likely need an Apple Developer ID to build and run the app on a real device.
-- You'll need to copy the OpenCV framework (version 4.1.1 or higher) to the root folder.  The framework can be downloaded [here](https://opencv.org/releases).
+- You'll need to copy the opencv2.framework (version 4.1.1 or higher) to the root folder.  The framework can be downloaded [here](https://opencv.org/releases).
 
 ## Known limitations
 - Does not detect the red borders around terminating tiles.
